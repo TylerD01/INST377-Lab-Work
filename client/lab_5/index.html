@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-full">
+            <div class="box has-background-warning">Box</div>
+          </div>
+          <div class="column is-one-fifth">
+            <div class="box">
+              <form action="/api" method="get">
+                <div class="field">
+                  <label class="label" for="fname">First Name</label>
+                  <div class="control">
+                    <input class="input" type="text" id="fname" name="fname" />
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label" for="food">Food Preference</label>
+                  <div class="control">
+                    <input class="input" type="text" id="food" name="food"/>
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label" for="veg">Veggie or Vegan?</label>
+                  <div class="control">
+                    <label class="radio">
+                      <input type="radio" name="veg" />
+                      Yes
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="veg" />
+                      No
+                    </label>
+                  </div>
+                </div>
+                <button class="button is-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
