@@ -42,4 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   const theTetrominos = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino];
+
+  const currentPosition = 4;
+  const current = theTetrominos[0][0];
+
+  function draw() {
+    current.forEach((index) => {
+      squares[currentPosition + index].classList.add('tetromino');
+    });
+  }
+  draw()
 });
