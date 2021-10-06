@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.grid');
-  const squares = Array.from(document.querySelectorAll('.grid div'));
+  let squares = Array.from(document.querySelectorAll('.grid div'));
   const width = 10;
   const ScoreDisplay = document.querySelector('#score');
   const StartButt = document.querySelector('#start-button');
@@ -43,13 +43,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const theTetrominos = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino];
 
-  const currentPosition = 4;
-  const current = theTetrominos[0][0];
+  let currentPosition = 4;
+  let currentRotation = 0;
+
+  let random = Math.floor(Math.random()*theTetrominos.length);
+  let current = theTetrominos[random][currentRotation];
 
   function draw() {
-    current.forEach((index) => {
+    current.forEach(index => {
       squares[currentPosition + index].classList.add('tetromino');
     });
   }
-  draw()
+  
+  function undraw() {
+    current.forEach(index => {
+      squares[currentPosition + index].classList.remove('tetromino')
+    });
+  }
+
+  timerId = setInterval(moveDown, 1000)
+
+  function moveDown() {
+    undraw()
+    currentPosition += width
+    draw()
+  }
 });
